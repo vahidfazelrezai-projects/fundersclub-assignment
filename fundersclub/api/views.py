@@ -6,24 +6,15 @@ import json
 
 
 class FundViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
     queryset = Fund.objects.select_related('llc').all()
     serializer_class = FundSerializer
 
 
 class CompanyViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
 
 class LlcViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
     queryset = Llc.objects.all()
     serializer_class = LlcSerializer
 
